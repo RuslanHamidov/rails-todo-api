@@ -4,4 +4,7 @@ Rails.application.routes.draw do
       patch :update_status
     end
   end
+
+  resources :users
+  post '/auth/login', to: 'authentication#login'
 end
