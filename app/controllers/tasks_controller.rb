@@ -3,8 +3,7 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    @tasks = Task.all
-
+    @tasks = Task.page(params[:page]).per(params[:per_page])
     render json: @tasks
   end
 
